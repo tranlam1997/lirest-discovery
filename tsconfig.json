@@ -1,0 +1,75 @@
+{
+  "compilerOptions": {
+    // Basic Options
+    "rootDir": ".",
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "ES2020",
+    "incremental": true,
+    "pretty": true,
+    "noEmitOnError": true,
+    // Strict Type Checks
+    // "strict": true,
+    // "noImplicitAny": false,
+    // "strictNullChecks": true,
+    // "strictFunctionTypes": true,
+    // "strictBindCallApply": true,
+    // "strictPropertyInitialization": false,
+    // "noImplicitThis": true,
+    // "alwaysStrict": true,
+    // Additional Checks
+    // "noUnusedLocals": false,
+    // "noUnusedParameters": false,
+    // "noImplicitReturns": true,
+    // "noFallthroughCasesInSwitch": true,
+    // Module Resolution
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    // Enable default import
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    // Source Maps
+    "sourceMap": true,
+    // Experimental Options
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    // Other Options
+    "noEmit": true,
+    "removeComments": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowUnreachableCode": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "ESNEXT"
+    ],
+    // Path Aliases
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ],
+      "@test/*": [
+        "test/*"
+      ]
+    },
+    // Project References
+    "composite": true,
+    // typings
+    "types": [
+      "reflect-metadata"
+    ],
+  },
+  "exclude": [
+    "api-docs",
+    "node_modules",
+    "dist",
+    "test"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "migration/**/*.ts",
+    "src/**/*.json",
+  ]
+}
