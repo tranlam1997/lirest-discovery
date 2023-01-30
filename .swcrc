@@ -13,13 +13,13 @@
     },
     "paths": {
       "@src/*": [
-        "src/*"
+        "dist/*"
       ],
       "@test/*": [
-        "test/*"
+        "dist/*"
       ]
     },
-    "baseUrl": "."
+    "baseUrl": "./"
   },
   "module": {
     "type": "commonjs"

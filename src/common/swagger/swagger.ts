@@ -11,14 +11,14 @@ const oaS3Options: swaggerJSDoc.OAS3Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'lirest-iam',
+      title: 'lirest-registry',
       version: '0.1.0',
-      description: 'API documentation for Lirest IAM service',
+      description: 'API documentation for Lirest Registry service',
       termsOfService: 'http://example.com/terms/',
       contact: {
         name: 'Support Team',
         url: 'https://www.facebook.com/profile.php?id=100062704105227',
-        email: 'foet1997@gmail.com',
+        email: 'lam.tttech19@gmail.com',
       },
       license: {
         name: 'MIT',
@@ -41,24 +41,8 @@ const oaS3Options: swaggerJSDoc.OAS3Options = {
         description: 'Test service connection',
       },
       {
-        name: 'Role',
-        description: 'Role operations',
-      },
-      {
-        name: 'Client',
-        description: 'Client operations',
-      },
-      {
-        name: 'Action',
-        description: 'Action operations',
-      },
-      {
-        name: 'Subject',
-        description: 'Subject operations',
-      },
-      {
-        name: 'Auth',
-        description: 'Auth operations',
+        name: 'Service Registry',
+        description: 'Service Registry operations',
       },
     ],
   },

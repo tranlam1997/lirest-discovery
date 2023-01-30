@@ -1,0 +1,61 @@
+openapi: 3.0.0
+
+paths:
+  /api/v1/service-registry:
+    # Create service registry
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Service Registry
+      description: Create a service registry
+      operationId: CreateServiceRegistry
+      summary: Create a service registry
+      requestBody:
+        $ref: "#/components/requestBodies/CreateServiceRegistryRequestBody"
+      responses:
+        201:
+          $ref: "#/components/responses/201CreateServiceRegistrySuccess"
+        400:
+          $ref: "#/components/responses/BadRequestResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+        500:
+          $ref: "#/components/responses/InternalServerErrorResponse"
+        501:
+          $ref: "#/components/responses/NotImplementedResponse"
+        502:
+          $ref: "#/components/responses/BadGatewayResponse"
+        503:
+          $ref: "#/components/responses/ServiceUnavailableResponse"
+        504:
+          $ref: "#/components/responses/GatewayTimeoutResponse"
+    # Get all service registries
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Service Registry
+      description: Get all service registry
+      operationId: GetAllServiceRegistries
+      summary: Get all service registry
+      responses:
+        200:
+          $ref: "#/components/responses/200GetAllServiceRegistriesSuccess"
+        400:
+          $ref: "#/components/responses/BadRequestResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+        500:
+          $ref: "#/components/responses/InternalServerErrorResponse"
+        501:
+          $ref: "#/components/responses/NotImplementedResponse"
+

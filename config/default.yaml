@@ -1,19 +1,14 @@
-# Service configuration
+# Service config
 service:
   host: 127.0.0.1
-  port: 3000
+  port: 3031
   baseUrl: /api/v1
 
 # Database configuration
-postgres:
-  host: 127.0.0.1
-  port: 5432
-  username: postgres
-  password: '123456'
-  database: 'lirest'
-  schema: 'users'
+mongodb:
+  uri: mongodb://localhost:27017/lirest
 
-# API documentation configuration
+# Swagger username and password
 api-docs:
   username: ''
   password: ''

@@ -1,0 +1,70 @@
+openapi: 3.0.0
+
+components:
+  schemas:
+    ServiceRegistry:
+      type: object
+      properties:
+        name:
+          type: string
+          description: service name
+          example: lirest-user-service
+        description:
+          type: string
+          description: service description
+          example: service description
+        url:
+          type: string
+          description: service url
+          example: http://localhost:8080
+        protocol:
+          type: string
+          description: service protocol
+          example: http
+        host:
+          type: string
+          description: service host
+          example: localhost
+        port:
+          type: integer
+          description: service port
+          example: 8080
+        baseUrl:
+          type: string
+          description: service base url
+          example: /api/v1
+        type:
+          type: string
+          description: service type
+          example: REST
+        version:
+          type: string
+          description: service version
+          example: 1.0.0
+        status:
+          type: string
+          description: service status
+          example: UP
+  requestBodies:
+    CreateServiceRegistryRequestBody:
+      description: service registry data
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ServiceRegistry"
+  responses:
+    201CreateServiceRegistrySuccess:
+      description: Create service registry successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ServiceRegistry'
+    200GetAllServiceRegistriesSuccess:
+      description: Get all service registries successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ServiceRegistry'
