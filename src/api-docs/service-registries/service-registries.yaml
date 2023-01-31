@@ -1,7 +1,7 @@
 openapi: 3.0.0
 
 paths:
-  /api/v1/service-registry:
+  /api/v1/service-registries:
     # Create service registry
     post:
       security:

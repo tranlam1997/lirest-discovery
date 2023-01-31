@@ -1,10 +1,10 @@
-import { ServiceRegistryRepository } from './service-registries.repository';
+import { ServiceRegistriesRepository } from './service-registries.repository';
 import { ServiceRegistry } from './interfaces/service-registries.interface';
 import { BadRequestException } from '../../errors/exceptions/bad-request-exception';
 
-export const ServiceRegistryService = {
+export const ServiceRegistriesService = {
   async createServiceRegistry(data: ServiceRegistry) {
-    const existService = await ServiceRegistryRepository.findOne({
+    const existService = await ServiceRegistriesRepository.findOne({
       name: data.name,
     });
 
@@ -12,12 +12,12 @@ export const ServiceRegistryService = {
       throw new BadRequestException('Service already exists');
     }
 
-    const newService = await ServiceRegistryRepository.create(data);
+    const newService = await ServiceRegistriesRepository.create(data);
     return newService;
   },
 
   async getAllServiceRegistries() {
-    const services = await ServiceRegistryRepository.findAll();
+    const services = await ServiceRegistriesRepository.findAll();
     return services;
   },
 };
