@@ -1,0 +1,54 @@
+openapi: 3.0.0
+
+components:
+  schemas:
+    ApiEndpoint:
+      type: object
+      properties:
+        route:
+          type: string
+          description: api route
+          example: /api/v1/api-endpoints/{id}
+        description:
+          type: string
+          description: api description
+          example: api description
+        serviceName:
+          type: string
+          description: service that api belongs to
+          example: lirest-user-service
+        method:
+          type: string
+          description: http method
+          example: GET
+        apiVersion:
+          type: number
+          description: version of api
+          example: 1
+        deprecated:
+          type: boolean
+          description: is api deprecated
+          example: false
+  requestBodies:
+    CreateApiEndpointRequestBody:
+      description: api endpoint data
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiEndpoint"
+  responses:
+    201CreateApiEndpointSuccess:
+      description: Create api endpoint successfully
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ApiEndpoint'
+    200GetAllApiEndpointsSuccess:
+      description: Get all api endpoints successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/ApiEndpoint'

@@ -34,7 +34,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     // Other Options
-    "noEmit": true,
+    "noEmit": false,
     "removeComments": true,
     "declaration": true,
     "declarationMap": true,

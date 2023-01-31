@@ -44,6 +44,10 @@ const oaS3Options: swaggerJSDoc.OAS3Options = {
         name: 'Service Registry',
         description: 'Service Registry operations',
       },
+      {
+        name: 'Api Endpoint',
+        description: 'Api Endpoint operations',
+      },
     ],
   },
   apis: ['./src/api-docs/**/*.yaml'],

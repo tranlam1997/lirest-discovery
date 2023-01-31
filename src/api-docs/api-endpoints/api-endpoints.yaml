@@ -1,0 +1,61 @@
+openapi: 3.0.0
+
+paths:
+  /api/v1/api-endpoints:
+    # Create api endpoint
+    post:
+      security:
+        - bearerAuth: []
+      tags:
+        - Api Endpoint
+      description: Create a api endpoint
+      operationId: CreateApiEndpoint
+      summary: Create a api endpoint
+      requestBody:
+        $ref: "#/components/requestBodies/CreateApiEndpointRequestBody"
+      responses:
+        201:
+          $ref: "#/components/responses/201CreateApiEndpointSuccess"
+        400:
+          $ref: "#/components/responses/BadRequestResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+        500:
+          $ref: "#/components/responses/InternalServerErrorResponse"
+        501:
+          $ref: "#/components/responses/NotImplementedResponse"
+        502:
+          $ref: "#/components/responses/BadGatewayResponse"
+        503:
+          $ref: "#/components/responses/ServiceUnavailableResponse"
+        504:
+          $ref: "#/components/responses/GatewayTimeoutResponse"
+    # Get all api endpoints
+    get:
+      security:
+        - bearerAuth: []
+      tags:
+        - Api Endpoint
+      description: Get all api endpoints
+      operationId: GetAllApiEndpoints
+      summary: Get all api endpoints
+      responses:
+        200:
+          $ref: "#/components/responses/200GetAllApiEndpointsSuccess"
+        400:
+          $ref: "#/components/responses/BadRequestResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedResponse"
+        403:
+          $ref: "#/components/responses/ForbiddenResponse"
+        404:
+          $ref: "#/components/responses/NotFoundResponse"
+        500:
+          $ref: "#/components/responses/InternalServerErrorResponse"
+        501:
+          $ref: "#/components/responses/NotImplementedResponse"
+
