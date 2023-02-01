@@ -8,5 +8,5 @@ export interface ServiceRegistry {
   baseUrl: string; // service base url, for example: /api/v1/user
   type: string; // service type
   version: string; // service version
-  status: string; // service status
+  status: boolean; // service status
 }
