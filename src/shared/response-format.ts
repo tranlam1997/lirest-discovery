@@ -24,7 +24,7 @@ export class ResultResponse {
         .setHeader(
           'X-Response-Time',
           `${convertNanosecondsToMilliseconds(
-            Number(process.hrtime.bigint() - res.locals.startTime),
+            Number(process.hrtime.bigint()) - Number(res.locals.startTime),
           )} ms`,
         )
         .status(statusCode)
@@ -35,7 +35,7 @@ export class ResultResponse {
       .setHeader(
         'X-Response-Time',
         `${convertNanosecondsToMilliseconds(
-          Number(process.hrtime.bigint() - res.locals.startTime),
+          Number(process.hrtime.bigint()) - Number(res.locals.startTime),
         )} ms`,
       )
       .status(statusCode)
