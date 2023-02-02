@@ -39,7 +39,7 @@
   "license": "ISC",
   "dependencies": {
     "@sinclair/typebox": "^0.25.21",
-    "@tranlam1997/lirest-internal-communication-service": "0.2.10",
+    "@tranlam1997/lirest-internal-communication-service": "0.2.12",
     "@types/swagger-jsdoc": "^6.0.1",
     "cls-hooked": "^4.2.2",
     "concurrently": "^7.6.0",
