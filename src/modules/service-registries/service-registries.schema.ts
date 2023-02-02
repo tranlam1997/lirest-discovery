@@ -26,4 +26,5 @@ export const ServiceRegistrySchema = new mongoose.Schema<ServiceRegistry>(
 
 ServiceRegistrySchema.plugin(mongoosePaginate);
 
-export default mongoose.model('ServiceRegistries', ServiceRegistrySchema);
+export default mongoose.models.ServiceRegistries ||
+  mongoose.model('ServiceRegistries', ServiceRegistrySchema);

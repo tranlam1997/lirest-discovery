@@ -33,4 +33,4 @@ export const ApiEndpointSchema = new mongoose.Schema<ApiEndpoint>(
 
 ApiEndpointSchema.plugin(mongoosePaginate);
 
-export default mongoose.model('ApiEndpoints', ApiEndpointSchema);
+export default mongoose.models.ApiEndpoints || mongoose.model('ApiEndpoints', ApiEndpointSchema);
