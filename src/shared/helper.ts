@@ -24,3 +24,12 @@ export const asyncHandler = (...fn: any[]): any => {
 export function convertNanosecondsToMilliseconds(nanoSeconds: number): number {
   return nanoSeconds / 1000000;
 }
+
+// change property name of object
+export function renameKey(obj: any, oldKey: string, newKey: string): any {
+  if (oldKey !== newKey) {
+    Object.defineProperty(obj, newKey, Object.getOwnPropertyDescriptor(obj, oldKey));
+    delete obj[oldKey];
+  }
+  return obj;
+}

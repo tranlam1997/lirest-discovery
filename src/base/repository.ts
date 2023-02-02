@@ -14,8 +14,9 @@ type BaseRepositoryResult<T> = {
   findAll(
     params?: { [key: string]: any },
     options?: { [key: string]: any },
-    limit?: number,
     sort?: { [key: string]: any },
+    select?: { [key: string]: any },
+    limit?: number,
   ): Promise<T[]>;
   find(
     params?: { [key: string]: any },
@@ -110,13 +111,15 @@ export default function BaseRepository<T extends object>(model: Model<T>): BaseR
     async findAll(
       params: any = {},
       options: any = {},
-      limit = 0,
       sort: { [key: string]: any } = {},
+      select: any = {},
+      limit = 0,
     ): Promise<Array<T>> {
       const query = model
         .find(params, null, { ...options, lean: true })
         .limit(limit)
-        .sort(sort);
+        .sort(sort)
+        .select(select);
       return query.exec();
     },
 

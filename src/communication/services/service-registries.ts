@@ -16,6 +16,6 @@ export class ServiceRegistriesServer implements ServiceRegistriesServiceServer {
     callback: sendUnaryData<GetAllServiceRegistriesResponse>,
   ) {
     const apiEndpoints = await ServiceRegistriesService.getAllServiceRegistries();
-    callback(null, GetAllServiceRegistriesResponse.fromJSON({ apiEndpoints }));
+    callback(null, GetAllServiceRegistriesResponse.fromJSON({ serviceRegistries: apiEndpoints }));
   }
 }
