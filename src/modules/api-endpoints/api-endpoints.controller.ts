@@ -1,6 +1,6 @@
 import { asyncHandler } from '../../shared/helper';
 import { Request, Response, Router } from 'express';
-import { ApiEndpointService } from './api-endpoints.service';
+import { ApiEndpointsService } from './api-endpoints.service';
 import { ResultResponse } from '../../shared/response-format';
 
 const ApiEndpointRouter = Router();
@@ -9,7 +9,7 @@ export default (app: Router) => {
   ApiEndpointRouter.route('/')
     .post(
       asyncHandler(async (req: Request, res: Response) => {
-        const api = await ApiEndpointService.createApiEndpoint(req.body);
+        const api = await ApiEndpointsService.createApiEndpoint(req.body);
         return ResultResponse.info(res, {
           response: {
             data: api,
@@ -19,7 +19,7 @@ export default (app: Router) => {
     )
     .get(
       asyncHandler(async (_req: Request, res: Response) => {
-        const apis = await ApiEndpointService.getAllApiEndpoints();
+        const apis = await ApiEndpointsService.getAllApiEndpoints();
         return ResultResponse.info(res, {
           response: {
             data: apis,

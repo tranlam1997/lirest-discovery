@@ -2,7 +2,7 @@ import { ApiEndpointsRepository } from './api-endpoints.repository';
 import { ApiEndpoint } from './interfaces/api-endpoints.interface';
 import { BadRequestException } from '../../errors/exceptions/bad-request-exception';
 
-export const ApiEndpointService = {
+export const ApiEndpointsService = {
   async createApiEndpoint(data: ApiEndpoint) {
     const existApi = await ApiEndpointsRepository.findOne({
       route: data.route,
