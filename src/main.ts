@@ -18,10 +18,11 @@ const MainLogger = logger('Main');
 
   const expressServer = app
     .listen(process.env.PORT || port, async () => {
-      // await import('./communication/server');
+      await import('./communication/server');
       MainLogger.info(
         `Service running at https://${config.get('service.host')}:${process.env.PORT || port}`,
       );
+      lightship.signalReady();
     })
     .on('error', () => {
       MainLogger.error('Unable to start server');
